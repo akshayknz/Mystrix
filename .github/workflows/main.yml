@@ -6,9 +6,9 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Firebase
-        env:
-          FIREBASE_TOKEN: ${{ secrets.1//0gKQG6_vkcn8RCgYIARAAGBASNwF-L9IrMeuwP7-y3MIi9Rrp4Fdj2Mtt7O19SpIhO2eoZU5keSnxoCdPuYXP2YoLf8iw9SA0pL0 }}
+    - uses: actions/checkout@master
+    - uses: jakejarvis/firebase-deploy-action@master
+      env:
+        FIREBASE_TOKEN: ${{ secrets.1//0gKQG6_vkcn8RCgYIARAAGBASNwF-L9IrMeuwP7-y3MIi9Rrp4Fdj2Mtt7O19SpIhO2eoZU5keSnxoCdPuYXP2YoLf8iw9SA0pL0 }}
