@@ -1,7 +1,7 @@
 var cacheName = 'cache-v1';
-
+/*
 var filesToCache = [
-/*	'./index.html',
+	'./index.html',
 	'./index.html?utm=homescreen', //Query strings are treated as seperate page
 	'./css/styles.css',
   './images/location.png',
@@ -11,7 +11,7 @@ var filesToCache = [
   './js/menu.js',
 	'./js/app.js',
   'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' //3rd party resource
-  */
+
 ];
 
 //Adding 'install' event listener
@@ -34,7 +34,7 @@ self.addEventListener('install', function (event) {
       })
   );
 });
-
+  */
 //Adding 'activate' event listener
 self.addEventListener('activate', function (event) {
   console.log('Event: Activate');

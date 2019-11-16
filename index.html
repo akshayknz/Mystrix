@@ -1,104 +1,202 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv=X-UA-Compatible content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-  <meta name=description content="Github Cards">
-  <title>Mystrix</title>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name=description content="yo yo knz">
+        <title>Mystrix</title>
+        <!-- Theme color -->
+        <meta name="theme-color" content="#1E88E5">
+        <!-- For iOS -->
+        <meta name="application-name" content="yoyo knz">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="yoyo knz">
+        <!-- Windows -->
+        <meta name="msapplication-TileColor" content="#1E88E5">
+        <meta name="msapplication-TileImage" content="./images/touch/mstile-150x150.png">
+        <!-- iOS touch icons -->
+        <link rel="apple-touch-icon" href="./images/touch/apple-touch-icon.png">
+        <!-- Android icon -->
+        <link rel=icon sizes="192x192" href="./images/touch/android-chrome-192x192.png">
+        <!-- Favicons -->
+        <link rel="icon" type="image/png" href="./images/touch/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <!-- Manifest for add to homescreen, splash screen etc, -->
+        <link rel="manifest" href="./manifest.json">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="keywords" content="yoyo knz"/>
+        <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="TweenMax.min.js"></script>
+        <script type="text/javascript" src="ScrollMagic.js"></script>
+        <script type="text/javascript" src="animation.gsap.js"></script>
+        <!--<script type="text/javascript" src="debug.addIndicators.js"></script>-->
+        <style>
+            {box-shadow:  0 0 0px 3px green,0 0 0px 10px rgba(255,255,255,.3);}
+            body {margin:0;padding:0;font-family: monospace;
+                height: 1000vh;color:#fff;background-color: #000;
+            }
+            .main {top:0;background-color: #000;
+                position: fixed;height:100vh;width:100vw;
+                display:flex;flex-direction: column;align-items: center;justify-content: center;
+            }
+            .content {padding:0px 20px;
+                opacity: 0;position: relative;top:100vh;transform: translatey(20vh);
+            }
+            .hello{font-size: 33px;}
+            .welcome{display: block;opacity: 0;transform: translateY(20vh);font-size: 17px;}
+            .big_logo{background-image: url(images/logo.png);filter: invert(1);
+                height: 42vh;
+                width: 53vw;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50%;}
+            .logo_tip{font-size: 40px;    }
+        </style>
+    </head>
+    <body>
+        <script>
+            // init controller
+            var controller = new ScrollMagic.Controller();
 
-  <!-- Theme color -->
-  <meta name="theme-color" content="#1E88E5">
-  
-  <!-- For iOS -->
-  <meta name="application-name" content="Github Cards">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Github Cards">
-  
-  <!-- Windows -->
-  <meta name="msapplication-TileColor" content="#1E88E5">
-  <meta name="msapplication-TileImage" content="./images/touch/mstile-150x150.png">
+        </script>
+        <section class="demo">
+            <style type="text/css">
+                .kish {
+                    opacity: 1;
+                    transform: translatey(-100vh);
+                }
 
-  <!-- iOS touch icons -->
-  <link rel="apple-touch-icon" href="./images/touch/apple-touch-icon.png">
-  
-  <!-- Android icon -->
-  <link rel=icon sizes="192x192" href="./images/touch/android-chrome-192x192.png">
-  
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="./images/touch/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
-  <link rel="shortcut icon" href="./favicon.ico">
+                .bish {
+                    opacity: 1;
+                    transform: translatey(10vh);
+                }
+                .welcome_note{opacity:1;transform:translatey(2vh);}
+                .big_logo_anim{opacity: 0;transform: translatey(-40vh);}
+                .logo_tip_anim{opacity: 0;transform: translatey(-40vh);}
+            </style>
+            <div class="spacer s2"></div>
+            <div id="trigger1" class="spacer s0" style="color:black;"></div>
+            <div id="animate1" class="box2 main">
+                <div class='big_logo' id='big_logo'></div>
+                <div class='logo_tip' id='logo_tip'>Mystrix</div>
+            </div>
+                <div id="welcome" class='hello content'>Welcome
+                  <span id='welcome_note' class='welcome'>
+                  Holy Grcae Academy of engg presents the tech day in which Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span></div>
 
-  <!-- Manifest for add to homescreen, splash screen etc, -->
-  <link rel="manifest" href="./manifest.json">
-
-  <link href="./css/styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-</head>
-<body>
-
-<div clsas=''></div>
+            <script>
 
 
 
 
+                // build tween
+                var tween = TweenMax.to("#animate1", 1, {
+                    className: "+=kish"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 30,
+                    offset: 890
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+
+                // build tween
+                var tween = TweenMax.to("#big_logo", 1, {
+                    className: "+=big_logo_anim"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 490,
+                    offset: 290
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween
+                var tween = TweenMax.to("#logo_tip", 1, {
+                    className: "+=logo_tip_anim"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 690,
+                    offset: 290
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween
+                var tween = TweenMax.to("#welcome", 1, {
+                    className: "+=bish"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 250,
+                    offset: 486
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween
+                var tween = TweenMax.to("#welcome_note", 1, {
+                    className: "+=welcome_note"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 350,
+                    offset: 586
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+var hammertime = new Hammer(myElement, myOptions);
+hammertime.on('pan', function(ev) {
+  console.log(ev);
+});
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- JS Files -->
-  <script type="text/javascript">
-    // If service worker is supported, then register it.
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js', { scope: './' }) //To set service worker scope
-        .then(function (register) {
-          if (register.installing) {
-            console.log('Service worker is installing!');
-          }
-          else if (register.waiting) {
-            console.log('Service worker is waiting!');
-          }
-          else if (register.active) {
-            console.log('Service worker is active!');
-          }
-        })
-        .catch(function (error) {
-          console.log('Service worker registration failed ', error);
-        });
-    }
-    else {
-      console.log('Service worker is not supported.');
-    }
-  </script>
-  <script src="./js/fetch-polyfill.js" type="text/javascript"></script>
-  <script src="./js/menu.js" type="text/javascript"></script>
-  <script src="./js/snackbar.js" type="text/javascript"></script>
-  <script src="./js/app.js" type="text/javascript"></script>
-</body>
+            </script>
+        </section>
+        <!-- JS Files -->
+        <script type="text/javascript">
+            // If service worker is supported, then register it.
+            if ('serviceWorker'in navigator) {
+                navigator.serviceWorker.register('./service-worker.js', {
+                    scope: './'
+                })//To set service worker scope
+                .then(function(register) {
+                    if (register.installing) {
+                        console.log('Service worker is installing!');
+                    } else if (register.waiting) {
+                        console.log('Service worker is waiting!');
+                    } else if (register.active) {
+                        console.log('Service worker is active!');
+                    }
+                }).catch(function(error) {
+                    console.log('Service worker registration failed ', error);
+                });
+            } else {
+                console.log('Service worker is not supported.');
+            }
+        </script>
+        <script src="./js/hammer.min.js" type="text/javascript"></script>
+    </body>
 </html>
