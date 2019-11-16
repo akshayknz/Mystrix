@@ -1,19 +1,17 @@
-name: CI
-
-on: [push]
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
-
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-    - name: Firebase Deploy
-      uses: jakejarvis/firebase-deploy-action@v0.1.0
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:prod
+        env:
+          FIREBASE_TOKEN: ${{ secrets.1//0gKQG6_vkcn8RCgYIARAAGBASNwF-L9IrMeuwP7-y3MIi9Rrp4Fdj2Mtt7O19SpIhO2eoZU5keSnxoCdPuYXP2YoLf8iw9SA0pL0 }}
