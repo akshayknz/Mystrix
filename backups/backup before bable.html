@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+      <meta http-equiv="Cache-control" content="public">
+        <meta charset="utf-8">
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name=description content="yo yo knz">
+        <title>Mystrix</title>
+        <meta name="theme-color" content="#000">
+        <meta name="application-name" content="yoyo knz">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="yoyo knz">
+        <meta name="msapplication-TileColor" content="#1E88E5">
+        <meta name="msapplication-TileImage" content="./images/touch/mstile-150x150.png">
+        <link rel="apple-touch-icon" href="./images/touch/apple-touch-icon.png">
+        <link rel=icon sizes="192x192" href="./images/touch/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" href="./images/touch/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link rel="manifest" href="./manifest.json">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="keywords" content="yoyo knz"/>
+        <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="TweenMax.min.js"></script>
+        <script type="text/javascript" src="ScrollMagic.js"></script>
+        <script type="text/javascript" src="animation.gsap.js"></script>
+<!--Dev Tools
+        <script type="text/javascript" src="debug.addIndicators.js"></script>
+        <style>
+            *{box-shadow:  0 0 0px 3px green,0 0 0px 10px rgba(255,255,255,.3);}</style>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+    $("img.lazy").lazyload({effect : "fadeIn"});
+});
+</script>
+<script type="text/javascript">
+function ChangeUrl(title, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Title: title, Url: url };
+        history.pushState(obj, obj.Title, obj.Url);
+    } else {
+        alert("Browser does not support HTML5.");
+    }
+}
+
+</script>
+<script type="text/javascript">window.onpopstate = function(event) {
+   $("#aa").prop('checked',false );
+};</script>
+        <style>
+            body {margin:0;padding:0;font-family: monospace;
+                height: 1000vh;color:#fff;background-color: #000;
+            }
+            .main {top:0;background-color: #000;
+                position: fixed;height:100vh;width:100vw;
+                display:flex;flex-direction: column;align-items: center;justify-content: center;
+            }
+            .content {padding:0px 20px;
+                opacity: 0;position: relative;top:100vh;transform: translatey(20vh);
+            }
+            .hello{font-size: 37px;letter-spacing: 7px;}
+            .welcome{display: block;opacity: 0;transform: translateY(20vh);font-size: 17px;letter-spacing: normal;}
+            .big_logo{background-image: url(images/logo.png);filter: invert(1);
+                height: 42vh;
+                width: 53vw;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50%;}
+            .logo_tip{font-size: 40px;    }
+            #aa:checked~.tho{background-color: red;font-size: 100px;}
+            .nav{height:10vh;width:100vw;position: fixed;bottom: 0px;transition: all .3s;
+              transform: translateY(10vh);z-index: 30;display:flex;justify-content: space-around;}
+              .navdiv{display: block;width:30%;}
+              #trigger5{top:200vh;position: relative;}
+</style>
+
+
+    </head>
+    <body>
+        <script>
+            // init controller
+            var controller = new ScrollMagic.Controller();
+
+        </script>
+        <section class="demo">
+            <style type="text/css">
+                .kish {
+                    opacity: 1;
+                    transform: translatey(-100vh);
+                }
+
+                .bish {
+                    opacity: 1;
+                    transform: translatey(10vh);
+                }
+                .welcome_note{opacity:1;transform:translatey(2vh);}
+                .big_logo_anim{opacity: 0;transform: translatey(-30vh);}
+                .logo_tip_anim{opacity: 0;transform: translatey(-20vh) scale(.9);}
+                .nav_anim{transform: translateY(0vh);}
+            </style>
+            <div class="spacer s2"></div>
+            <div id="trigger1" class="spacer s0" style="color:black;"></div>
+            <div id="animate1" class="box2 main">
+                <div class='big_logo' id='big_logo'></div>
+                <div class='logo_tip' id='logo_tip'>Mystrix</div>
+            </div><div id="trigger5"></div>
+            <div class='nav' id='nav'>
+              <div class='home navdiv'>aa</div>
+              <div class='events navdiv'></div>
+              <div class='register navdiv'></div>
+            </div>
+                <div id="welcome" class='hello content'>welcome
+                  <span id='welcome_note' class='welcome'>
+                  Holy Grcae Academy of engg presents the tech day in which  dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </span><label for='aa' onclick="ChangeUrl('Page1', 'aa');">hell no </label>
+                    <input type='checkbox' id='aa' autocomplete="off"></input>
+                    <div class='tho'>d</div>
+                  <img class="lazy" data-original="./(url of img)" width="100%" height="100%"></img>
+                </div>
+
+            <script>
+
+
+                // build tween for LOGO Main
+  var scene = new ScrollMagic.Scene({triggerElement: "#trigger1",
+                    offset: 590})
+          // trigger animation by adding a css class
+          .setClassToggle("#nav", "nav_anim")
+          .addIndicators({name: "1 - add a class"}) // add indicators (requires plugin)
+          .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween for LOGO Main
+                var tween = TweenMax.to("#animate1", 1, {
+                    className: "+=kish"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 30,
+                    offset: 990
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+
+                // build tween LOGO
+                var tween = TweenMax.to("#big_logo", 1, {
+                    className: "+=big_logo_anim"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 690,
+                    offset: 290
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween Logo_tip
+                var tween = TweenMax.to("#logo_tip", 1, {
+                    className: "+=logo_tip_anim"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 190,
+                    offset: 290
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween Welcome heading
+                var tween = TweenMax.to("#welcome", 1, {
+                    className: "+=bish"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 250,
+                    offset: 486
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+
+                // build tween Welcome note
+                var tween = TweenMax.to("#welcome_note", 1, {
+                    className: "+=welcome_note"
+                });
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1",
+                    duration: 250,
+                    offset: 586
+                }).setTween(tween).addIndicators({
+                    name: "tween css class"
+                })
+                .addTo(controller);
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+
+
+            </script>
+        </section>
+        <!-- JS Files -->
+        <script type="text/javascript">
+            // If service worker is supported, then register it.
+            if ('serviceWorker'in navigator) {
+                navigator.serviceWorker.register('./service-worker.js', {
+                    scope: './'
+                })//To set service worker scope
+                .then(function(register) {
+                    if (register.installing) {
+                        console.log('Service worker is installing!');
+                    } else if (register.waiting) {
+                        console.log('Service worker is waiting!');
+                    } else if (register.active) {
+                        console.log('Service worker is active!');
+                    }
+                }).catch(function(error) {
+                    console.log('Service worker registration failed ', error);
+                });
+            } else {
+                console.log('Service worker is not supported.');
+            }
+        </script>
+
+
+
+<div id="canvas" class="gradient"></div>
+
+    </body>
+</html>

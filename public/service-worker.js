@@ -3,17 +3,23 @@ var cacheName = 'cache-v1';
 var filesToCache = [
 	'./index.html',
 	'./index.html?utm=homescreen', //Query strings are treated as seperate page
-	'./css/styles.css',
-  './images/location.png',
-  './images/fab_add.svg',
-  './images/loading.gif',
-	'./images/github-banner.png',
-  './js/menu.js',
-	'./js/app.js',
-  'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' //3rd party resource
+  './images/logo.png',
+  'scrollmagic.js',
+  'tweenmax.min.js',
+  'animation.gsap.js'
 
 ];
+const offlineFallbackPage = "ToDo-replace-this-name.html";
 
+const networkFirstPaths = [
+  //* Add an array of regex of paths that should go network first 
+  // Example: /\/api\/.
+];
+
+const avoidCachingPaths = [
+  //* Add an array of regex of paths that shouldn't be cached 
+  // Example: /\/api\/.
+];
 //Adding 'install' event listener
 self.addEventListener('install', function (event) {
   console.log('Event: Install');
