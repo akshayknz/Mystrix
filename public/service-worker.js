@@ -40,7 +40,7 @@ self.addEventListener('install', function (event) {
       })
   );
 });
-  */
+
 //Adding 'activate' event listener
 self.addEventListener('activate', function (event) {
   console.log('Event: Activate');
@@ -59,7 +59,7 @@ self.addEventListener('activate', function (event) {
     })
   );
 });
-
+  */
 //Adding 'fetch' event listener
 self.addEventListener('fetch', function (event) {
   console.log('Event: Fetch');

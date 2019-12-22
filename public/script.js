@@ -50,15 +50,15 @@ const init = () => {
   let geometry = new THREE.Geometry();
 
   // Number of particles
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 55; i++) {
 
     particle = new THREE.Sprite(material);
     particle.position.x = Math.random() * 2 - 1;
     particle.position.y = Math.random() * 2 - 1;
     particle.position.z = Math.random() * 2 - 1;
     particle.position.normalize();
-    particle.position.multiplyScalar(Math.random() * 10 + 600);
-    particle.scale.x = particle.scale.y = 5;
+    particle.position.multiplyScalar(Math.random() * 10 + 400);
+    particle.scale.x = particle.scale.y = 11;
 
     scene.add(particle);
 
@@ -67,7 +67,7 @@ const init = () => {
   }
 
   // Lines
-  let line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: color, opacity: 0.2 }));
+  let line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: color, opacity: 0.5 }));
   scene.add(line);
 
   document.addEventListener('mousemove', onDocumentMouseMove, false);
