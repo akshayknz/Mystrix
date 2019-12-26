@@ -1,3 +1,54 @@
+<?php
+
+   include("config.php");
+   session_start();
+   
+   global $error;
+   $error = "  ";
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+	   
+      // Data send from registration form
+      $uname = mysqli_real_escape_string($db,$_POST['name']);           // Full Name
+      $ubranch = mysqli_real_escape_string($db,$_POST['branch']);       // Branch
+      $uyear = mysqli_real_escape_string($db,$_POST['year']);           // Year
+	  $ucollege = mysqli_real_escape_string($db,$_POST['college']);     // College Name
+	  $umailid = mysqli_real_escape_string($db,$_POST['mailid']);       // Email ID
+	  $ucontactno = mysqli_real_escape_string($db,$_POST['contactno']);     // Phone Number
+	  
+	  // Checking for registration duplication
+	  $sql = "SELECT COUNT(*) as cntusr FROM registration WHERE mail_id = '".$umailid."' and full_name = '".$uname."'";
+      $result = mysqli_query($db,$sql) or die("ERROR @sql-check : " . mysqli_error($db));
+      $row = mysqli_fetch_array($result);
+      $count = $row['cntusr'];
+      // If result matched $umailid and $uname, $count>0
+      if($count > 0) { 
+         $error = " ERROR : Already Registered";
+      }
+	  else {
+		  
+		  // Register
+		$sql = "INSERT INTO registration (`full_name`, `branch`, `year`, `college`, `mail_id`, `contact_no`) VALUES ('".$uname."', '".$ubranch."', '".$uyear."', '".$ucollege."', '".$umailid."', '".$ucontactno."')";
+		$result = mysqli_query($db,$sql) or die("Error @sql-insert : " . mysqli_error($db));
+		
+		 // Fetching Registration ID 
+		$sql = "SELECT reg_id FROM registration WHERE full_name = '".$uname."' AND mail_id = '".$umailid."'";
+		$result = mysqli_query($db,$sql) or die("ERROR @sql-reg_id : " . mysqli_error($db));
+		$row = mysqli_fetch_array($result);      
+		$uregid = $row['reg_id'];  
+		  // Check whether registration successfull or not	
+		if($uregid) {
+			$_SESSION['reg_id'] = $uregid;
+			header("location: registrationsuccess.php");
+		}else {
+			$error = "ERROR : Registration Failed ";
+		}
+	  }
+   }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,7 +79,7 @@
         <script src="ScrollMagic.js" type="text/javascript"></script>
         <script src="animation.gsap.js" type="text/javascript"></script>
         <!--Uncomment this for Debug mode (DevTip)-->
-                    <!--Dev Tools-->
+                    <!--Dev Tools
                     <script type="text/javascript" src="debug.addIndicators.js"></script>
                     <style>
                          {
@@ -37,7 +88,7 @@
                         body{background-color: #000 !important;}
                         canvas{display: none;}
                     </style>
-                    <!--Dev Tools-->
+                    <!--Dev Tools-->-->
         <!--Uncomment this for Debug mode (DevTip)-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
@@ -85,6 +136,7 @@
                 height: auto;
                 color: #fff;
                 background-color: transparent;
+                overflow-x: hidden;width: 100vw;
             }
 
             .main {
@@ -172,7 +224,7 @@
             #canvas {
                 position: fixed;
                 z-index: -1;
-                height: 110vh;
+                height: 110vh;top:0;
             }
 
             .lazy {
@@ -356,25 +408,8 @@
                 width: 24vw;
             }
 
-            .kbutton {
-                height: 50px;
-                background: #33ff84;
-                line-height: 53px;
-                font-size: 18px;
-                text-align: center;
-                color: #000;
-                width: 62vw;
-                transform: translatey(20vh);
-            }
-
-            .second_block .kbutton {
+.second_block .kbutton {
                 margin-top: 3vh;
-            }
-
-            .kbutton:hover {
-                box-shadow: 0 0 0 3px #fff;
-                background-color: transparent;
-                color: #fff;
             }
 
             .logo_tip .kbutton {
@@ -677,7 +712,7 @@
                 Phone no. <input autocomplete='tel' id="contactno" name="contactno" type="number" size="18" required>
             </div>
             <div>
-                <button class='kbutton' type="submit" value="Submit" name="Submit">Submit</button>
+                <button class='kbutton' type="submit" value="Submit" name="Submit" target="_blank">Submit</button>
             </div>
             <div id="form-login-err-msg" class="err-msg">
             <?php
@@ -950,3 +985,4 @@
 <script src="https://joanclaret.github.io/html5-canvas-animation/js/canvas-renderer.js"></script>
 <script src="./script.js" type="module"></script>
 </body></html>
+
