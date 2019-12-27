@@ -1,4 +1,4 @@
-<!--
+
 <?php
    include('config.php');
    session_start();
@@ -21,7 +21,7 @@
    
    
 ?>
--->
+
 
 
 <html>
@@ -126,7 +126,7 @@
 <div class='main'>
       <div class='ticket'>
             <h2 class='gethim'>Akshay K Nair<?php echo $uname; ?></h2> 
-      	  <h2 class='gether'>0004581<?php echo $uregid; ?></h2>
+      	  <h2 class='gether'>0000001<?php echo $uregid; ?></h2>
       	  <img class='qr' src="https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=<?php echo $uregid ?>" alt="QR_code">
       	  <p>Please present this QR Code at registration of the event. Screenshot or save a PDF of this ticket.</p>
 	  </div>

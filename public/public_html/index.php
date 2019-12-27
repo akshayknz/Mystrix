@@ -174,7 +174,7 @@
             }
 
             .big_logo {
-                background-image: url(images/logo.svg);
+                background-image: url(images/msytix_outline.svg);
                 height: 42vh;
                 width: 53vw;
                 background-size: cover;
