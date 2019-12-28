@@ -30,7 +30,7 @@
 		<style>
 			body {
 				height: auto;
-                font-family: o;
+                		font-family: o;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -40,15 +40,20 @@
 				height: 1020px;
 				width: 682px;
 				}
-			.ticket p{
-				font-size: 12px;
-				font-weight: bolder;
+
+			.url{
+				font-size: 20px;
+				position: relative;
 				font-family: extralight;
+				top: 30%;
+				margin: 10px 0px;
+				left: 30%;
 				}
+				
 			.qr{ height: 300px;
 				width: 300px;
 				position: relative;
-				top: 40%;
+				top: 35%;
 				left: 20%;
 				mix-blend-mode: multiply;
 				margin: 12px 0 0 0px;
@@ -58,22 +63,25 @@
 				font-size: 30px;
 				position: relative;
 				font-family: bb;
-				top: 40%;
+				top: 35%;
 				margin: 10px 0px;
-				left: 30%;}	
+				left: 27%;
+				}	
 			.gether{
 				font-size: 20px;
 				position: relative;
 				font-weight: bolder;
 				margin: 0px 0px;
-				top: 40%;
-				left: 30%;
+				top: 35%;
+				left: 27%;
 				}
 			.ticket p{
 				font-size: 15px;
+				font-weight: bolder;
+				font-family: extralight;
 				position: relative;
-				top: 40%;
-				left: 22%;
+				top: 35%;
+				left: 27%;
 				width: 60%;
 				}       
 		</style>
@@ -85,10 +93,11 @@
 	</head>
 	<body onload = myFunction()>
 		<div id='ticket' class='ticket'>
+			<h3 class='url' align='left'>www.mystrix.in</h3>
 			<h2 class='gethim'><?php echo $uname; ?></h2> 
 			<h2 class='gether'><?php echo $uregid; ?></h2>
 			<img class='qr' src="https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=<?php echo $uregid ?>" alt="QR_code">
-			<p>Please present this QR Code at registration of the event. Screenshot or save a PDF of this ticket.</p>
+			<p align='left'>Please present this QR Code at registration of the event.</p>
 		</div>
 	</body>
  </html>
